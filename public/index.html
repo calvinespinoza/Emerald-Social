@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script src="config.js"></script>
+  <script src="common.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
+
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body background="cool-background2.png" style="color:rgb(52, 73, 94);font-family:GothamPro">
+  <div id="container">
+
+    <nav>
+      <ul>
+        <li>
+          <a href="">H O M E</a>
+        </li>
+        <li>
+          <a href= "profile.html"><!--<i href= "" class="material-icons" style="font-size:60px;color:white">person_outline</i>--> P R O F I L E</a>
+        </li>
+        <li>
+          <a href="feed.html">F E E D</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1>E m e r a l d</h1>
+    <div id="loading">Loading...</div>
+    <div id="loaded" class="hidden">
+      <div id="main">
+        <div id="user-signed-in" class="hidden">
+          <div id="user-info">
+            <div id="photo-container">
+              <img id="photo">
+            </div>
+            <div id="name"></div>
+            <div id="email"></div>
+            <div id="phone"></div>
+            <div id="is-new-user"></div>
+            <div class="clearfix"></div>
+          </div>
+          <p>
+            <button id="sign-out">Sign Out</button>
+            <button id="delete-account">Delete account</button>
+          </p>
+        </div>
+        <div id="user-signed-out" class="hidden">
+          <h5 class="light">You are signed out.</h5>
+          <fieldset>
+            <legend>Configuration</legend>
+            reCAPTCHA mode for Phone Auth:
+            <label for="recaptcha-normal">
+              <input type="radio" id="recaptcha-normal" name="recaptcha" value="normal"> Normal
+            </label>
+            <label for="recaptcha-invisible">
+              <input type="radio" id="recaptcha-invisible" name="recaptcha" value="invisible"> Invisible
+            </label>
+          </fieldset>
+          <p>
+            <button style="font-family:GothamPro" id="sign-in-with-redirect">Sign In with Redirect</button>
+            <button style="font-family:GothamPro" id="sign-in-with-popup">Sign In with Popup</button>
+          </p>
+          <div id="firebaseui-spa">
+            <!--<h5>Single Page Application mode:</h5>-->
+            <div id="firebaseui-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
