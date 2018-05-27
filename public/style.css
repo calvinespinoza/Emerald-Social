@@ -76,10 +76,14 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 15px;
+  font-family: GothamPro-Black;
+  color: rgb(83, 99, 116);
+}
+
+h3 {
   font-family: GothamPro;
-  font-weight: light;
-  color: rgb(241, 148, 138);
+  font-size: 25px;
 }
 
 h4 {
@@ -133,4 +137,28 @@ input.hidden {
 .bot-border {
   border-bottom: 1px #f8f8f8 solid;
   margin: 5px 0 5px 0
+}
+
+.demo-card-wide.mdl-card {
+  width: 600px;
+  margin: 15px;
+}
+
+.demo-card-wide>.mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background-color: rgb(137, 119, 167);
+}
+
+.demo-card-wide>.mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-textfield__input {
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "GothamPro";
+  width: 600px;
+  height: 150px;
+  margin: 20px;
+  border: rgb(255, 255, 255, 0);
 }

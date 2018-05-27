@@ -19,6 +19,7 @@
 /**
  * @return {!Object} The FirebaseUI config.
  */
+var newUser = true;
 function getUiConfig() {
   return {
     'callbacks': {
@@ -31,6 +32,7 @@ function getUiConfig() {
           document.getElementById('is-new-user').textContent =
             authResult.additionalUserInfo.isNewUser ?
               'New User' : 'Existing User';
+          authResult.additionalUserInfo.isNewUser ? newUser = true : newUser = false;
         }
         // Do not redirect.
         return false;
@@ -118,6 +120,20 @@ var handleSignedInUser = function (user) {
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
   document.getElementById('phone').textContent = user.phoneNumber;
+
+  var ref = firebase.database().ref().child("Usuarios").child(user.uid);
+
+  if (newUser) {
+    ref.child("UID").set(user.uid);
+    ref.child("Name").set(user.displayName);
+    ref.child("Email").set(user.email);
+    ref.child("Phone Number").set(user.phoneNumber);
+    ref.child("Photo URL").set(user.photoURL);
+  }
+
+
+
+
   if (user.photoURL) {
     var photoURL = user.photoURL;
     // Append size to the photo URL for Google hosted images to avoid requesting
@@ -142,6 +158,8 @@ var handleSignedInUser = function (user) {
 var handleSignedOutUser = function () {
   document.getElementById('user-signed-in').style.display = 'none';
   document.getElementById('user-signed-out').style.display = 'block';
+  window.alert("SHIT");
+
   ui.start('#firebaseui-container', getUiConfig());
 };
 
@@ -213,22 +231,3 @@ var initApp = function () {
 };
 
 window.addEventListener('load', initApp);
-/*
-factory("Mensaje", function ($firebaseArray) {
-  var ref = new Firebase("https://qwerty-e2961.firebaseapp.com/");
-  return $firebaseArray(ref);
-})
-
-  .controller("ListCtrl", function ($scope, Mensaje) {
-    $scope.Mensaje = Mensaje;
-
-    $scope.agregarMensaje = function () {
-      var Nombre = prompt("Ingrese Mensaje");
-      if (nombre) {
-        $scope.Usuarios.$add({
-          "Mensaje": Mensaje
-        });
-      }
-    };
-  })
-*/
