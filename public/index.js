@@ -78,24 +78,25 @@ $(document).ready(function () {
             var public = snap.child("Publico").val();
 
             firebase.auth().onAuthStateChanged(function (user) {
-
-                if (user.uid == id) {
-                    var string = "<div class='demo-card-wide mdl-card mdl-shadow--2dp'>"
-                        + "<div class='mdl-card__title' style='background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%)'>"
-                        + "<h2 class='mdl-card__title-text'>"
-                        + message + "</h2></div><div class='mdl-card__supporting-text'>"
-                        + name + " (You) </div></div>"
-
-                    $("#feed").append(string);
-                } else {
-                    if (public == "True") {
+                if (user) {
+                    if (user.uid == id) {
                         var string = "<div class='demo-card-wide mdl-card mdl-shadow--2dp'>"
                             + "<div class='mdl-card__title'>"
                             + "<h2 class='mdl-card__title-text'>"
                             + message + "</h2></div><div class='mdl-card__supporting-text'>"
-                            + name + "</div></div>"
+                            + name + " (You) </div></div>"
 
                         $("#feed").append(string);
+                    } else {
+                        if (public == "True") {
+                            var string = "<div class='demo-card-wide mdl-card mdl-shadow--2dp'>"
+                                + "<div class='mdl-card__title'>"
+                                + "<h2 class='mdl-card__title-text'>"
+                                + message + "</h2></div><div class='mdl-card__supporting-text'>"
+                                + name + "</div></div>"
+
+                            $("#feed").append(string);
+                        }
                     }
                 }
             });

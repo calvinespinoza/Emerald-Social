@@ -58,8 +58,8 @@ function getUiConfig() {
           'user_friends'
         ]
       },
-      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      //firebase.auth.GithubAuthProvider.PROVIDER_ID,
       {
         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
         // Whether the display name should be displayed in Sign Up page.
@@ -116,6 +116,8 @@ var signInWithPopup = function () {
  */
 var handleSignedInUser = function (user) {
   document.getElementById('user-signed-in').style.display = 'block';
+  document.getElementById('bt-profile').style.display = 'block';
+  document.getElementById('bt-sign-out').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
@@ -158,6 +160,8 @@ var handleSignedInUser = function (user) {
 var handleSignedOutUser = function () {
   document.getElementById('user-signed-in').style.display = 'none';
   document.getElementById('user-signed-out').style.display = 'block';
+  document.getElementById('bt-profile').style.display = 'none';
+ document.getElementById('bt-sign-out').style.display = 'none';
 
   ui.start('#firebaseui-container', getUiConfig());
 };
