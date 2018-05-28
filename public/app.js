@@ -158,7 +158,6 @@ var handleSignedInUser = function (user) {
 var handleSignedOutUser = function () {
   document.getElementById('user-signed-in').style.display = 'none';
   document.getElementById('user-signed-out').style.display = 'block';
-  window.alert("SHIT");
 
   ui.start('#firebaseui-container', getUiConfig());
 };

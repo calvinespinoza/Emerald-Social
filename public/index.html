@@ -36,6 +36,11 @@
 
     <nav>
       <ul>
+        <!--
+        <li>
+          <p><i class="/images/logo.png"></i>E M E R A L D</p>
+        </li>
+        -->
         <li>
           <a href="index.html">H O M E</a>
         </li>
@@ -93,6 +98,13 @@
       </div>
     </div>
   </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then(function () { console.log("Service Worker Registered"); });
+    }
+  </script>
   <script src="app.js"></script>
 </body>
 

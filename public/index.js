@@ -81,7 +81,7 @@ $(document).ready(function () {
 
                 if (user.uid == id) {
                     var string = "<div class='demo-card-wide mdl-card mdl-shadow--2dp'>"
-                        + "<div class='mdl-card__title'>"
+                        + "<div class='mdl-card__title' style='background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%)'>"
                         + "<h2 class='mdl-card__title-text'>"
                         + message + "</h2></div><div class='mdl-card__supporting-text'>"
                         + name + " (You) </div></div>"
