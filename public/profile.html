@@ -1,7 +1,11 @@
 <head>
+    <title>Emerald – Profile</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <link rel="manifest" href="/manifest.json">
 
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -9,13 +13,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css" />
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png/favicon-16x16.png">
+    <link rel="manifest" href="/images/logo.png/site.webmanifest">
+    <link rel="mask-icon" href="/images/logo.png/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/images/logo.png/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="/images/logo.png/browserconfig.xml">
+    <meta name="theme-color" content="#756161">
 </head>
 
-<body background="cool-background2.png" style="color:rgb(52, 73, 94); font-family:GothamPro">
+<body align="center" style="color:rgb(52, 73, 94); font-family:GothamPro">
 
-    <div id="container">
+    <div align="center" id="container">
 
         <nav>
             <ul>
@@ -31,15 +47,13 @@
                 </li>
             </ul>
         </nav>
-        <div class="container">
+        <div align="center" class="container">
             <div class="row">
                 <h1>P R O F I L E</h1>
                 <div class="col-md-7 ">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h5>User Profile</h5>
-                        </div>
+                    <div align="center" class="panel panel-default">
+
                         <div class="panel-body">
 
                             <div class="box box-info">
@@ -51,65 +65,71 @@
                                                 class="img-circle img-responsive">
 
                                             <input id="profile-image-upload" class="hidden" type="file">
-                                            <div style="color:#999;">click here to change profile image</div>
+
                                             <!--Upload Image Js And Css-->
 
                                         </div>
-                                        <br>
+
+
                                         <!-- /input-group -->
                                     </div>
-                                    <div class="col-sm-6">
-                                        <h4>Prasad Shankar Huddedar </h4>
-                                        </span>
-                                        <span>
-                                            <p>Aspirant</p>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border" color="rgb(255,255,255,0)"></div>
+
+                                    <div align="center" class="col-sm-6">
+                                        <h4 font-family="GothamPro-Black" id="userNombre">[NOMBRE]</h4>
                                         </span>
                                     </div>
                                     <div class="clearfix"></div>
                                     <hr style="margin:5px 0 5px 0;">
 
 
-                                    <div class="col-sm-5 col-xs-6 tital ">First Name:</div>
-                                    <div class="col-sm-7 col-xs-6 ">Prasad</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">Nombre</div>
+                                    <div class="col-sm-7 col-xs-6 ">
+                                        <p id="nombre">[nombre]</p>
+                                    </div>
                                     <div class="clearfix"></div>
                                     <div class="bot-border"></div>
 
-                                    <div class="col-sm-5 col-xs-6 tital ">Middle Name:</div>
-                                    <div class="col-sm-7"> Shankar</div>
-                                    <div class="clearfix"></div>
-                                    <div class="bot-border"></div>
-
-                                    <div class="col-sm-5 col-xs-6 tital ">Last Name:</div>
-                                    <div class="col-sm-7"> Huddedar</div>
-                                    <div class="clearfix"></div>
-                                    <div class="bot-border"></div>
-
-                                    <div class="col-sm-5 col-xs-6 tital ">Date Of Joining:</div>
-                                    <div class="col-sm-7">15 Jun 2016</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">Email</div>
+                                    <div class="col-sm-7">
+                                        <p id="email">[email]</p>
+                                    </div>
 
                                     <div class="clearfix"></div>
                                     <div class="bot-border"></div>
 
-                                    <div class="col-sm-5 col-xs-6 tital ">Date Of Birth:</div>
-                                    <div class="col-sm-7">11 Jun 1998</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">Telefono</div>
+                                    <div class="col-sm-7">
+                                        <p id="telefono"></p>
+                                    </div>
 
                                     <div class="clearfix"></div>
                                     <div class="bot-border"></div>
 
-                                    <div class="col-sm-5 col-xs-6 tital ">Place Of Birth:</div>
-                                    <div class="col-sm-7">Shirdi</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">Mensajes privados</div>
+                                    <div class="col-sm-7">
+                                        <p id="privados">[privados]</p>
+                                    </div>
 
                                     <div class="clearfix"></div>
                                     <div class="bot-border"></div>
 
-                                    <div class="col-sm-5 col-xs-6 tital ">Nationality:</div>
-                                    <div class="col-sm-7">Indian</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">Mensajes publicos</div>
+                                    <div class="col-sm-7">
+                                        <p id="publicos">[publicos]</p>
+                                    </div>
 
                                     <div class="clearfix"></div>
                                     <div class="bot-border"></div>
 
-                                    <div class="col-sm-5 col-xs-6 tital ">Relition:</div>
-                                    <div class="col-sm-7">Hindu</div>
+                                    <div class="col-sm-5 col-xs-6 tital ">UID</div>
+                                    <div class="col-sm-7">
+                                        <p id="uid" [uid]></p>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
 
 
                                     <!-- /.box-body -->
@@ -132,4 +152,5 @@
 
             </div>
         </div>
+        <script src="prof.js"></script>
 </body>

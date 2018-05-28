@@ -93,8 +93,10 @@ h4 {
 }
 
 nav {
-  background: rgb(83, 99, 116, .8);
-  width: 100%;
+  --background: rgb(83, 99, 116, .8);
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    width: 100%;
   text-align: center;
 }
 
@@ -147,7 +149,15 @@ input.hidden {
 .demo-card-wide>.mdl-card__title {
   color: #fff;
   height: 176px;
-  background-color: rgb(137, 119, 167);
+  background: rgb(137, 119, 167);
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.demo-card-wide>.my-card-title {
+  color: #fff;
+  height: 176px;
+  background: rgb(137, 119, 167);
+  background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
 }
 
 .demo-card-wide>.mdl-card__menu {
@@ -160,5 +170,6 @@ input.hidden {
   width: 600px;
   height: 150px;
   margin: 20px;
-  border: rgb(255, 255, 255, 0);
+  border: 4px linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
+
